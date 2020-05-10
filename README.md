@@ -1,5 +1,7 @@
 # Pizza Pi
 
+> **[Open application →](https://polarstoat.github.io/pizza-pi/)**
+
 *Calculate the area to price ratio between different pizzas*
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
