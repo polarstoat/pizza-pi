@@ -4,7 +4,29 @@ import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import InputGroup from 'react-bootstrap/InputGroup'
 
+import NumberInput from './NumberInput.js'
+
 class Pizza extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      diameter: 13,
+      price: 10.99,
+    };
+
+    this.handleDiameterChange = this.handleDiameterChange.bind(this);
+    this.handlePriceChange = this.handlePriceChange.bind(this);
+  }
+
+  handleDiameterChange(diameter) {
+    this.setState({diameter})
+  }
+
+  handlePriceChange(price) {
+    this.setState({price});
+  }
+
   render() {
     const lowerCaseName = this.props.name.toLowerCase();
 
@@ -15,7 +37,7 @@ class Pizza extends Component {
           <Form.Group as={Col} controlId={`${lowerCaseName}-pizza-diameter`}>
             <Form.Label>Diameter</Form.Label>
             <InputGroup>
-              <Form.Control type="number" inputMode="decimal" value={13} />
+              <NumberInput value={this.state.diameter} onChange={this.handleDiameterChange} />
               <InputGroup.Append>
                 <InputGroup.Text>in</InputGroup.Text>
               </InputGroup.Append>
@@ -27,7 +49,7 @@ class Pizza extends Component {
               <InputGroup.Prepend>
                 <InputGroup.Text>£</InputGroup.Text>
               </InputGroup.Prepend>
-              <Form.Control type="number" inputMode="decimal" value={10.99} />
+              <NumberInput value={this.state.price} onChange={this.handlePriceChange} />
             </InputGroup>
           </Form.Group>
         </Form.Row>
