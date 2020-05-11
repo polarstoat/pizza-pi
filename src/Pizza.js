@@ -27,8 +27,17 @@ class Pizza extends Component {
     this.setState({price});
   }
 
+  getArea() {
+    const radius = this.state.diameter / 2;
+    const area = Math.PI * Math.pow(radius, 2)
+
+    return area;
+  }
+
   render() {
     const lowerCaseName = this.props.name.toLowerCase();
+
+    const area = this.getArea();
 
     return (
       <Form>
@@ -57,7 +66,7 @@ class Pizza extends Component {
           <Form.Group as={Col} controlId={`${lowerCaseName}-pizza-area`}>
             <Form.Label>Area</Form.Label>
             <InputGroup>
-              <Form.Control type="number" readOnly={true} value={132.73} />
+              <Form.Control type="number" readOnly={true} value={area.toFixed(2)} />
               <InputGroup.Append>
                 <InputGroup.Text>sq. in</InputGroup.Text>
               </InputGroup.Append>
@@ -69,7 +78,7 @@ class Pizza extends Component {
               <InputGroup.Prepend>
                 <InputGroup.Text>£</InputGroup.Text>
               </InputGroup.Prepend>
-              <Form.Control type="number" readOnly={true} value={0.0828} />
+              <Form.Control type="number" readOnly={true} value={(this.state.price / area).toFixed(4)} />
             </InputGroup>
           </Form.Group>
         </Form.Row>
