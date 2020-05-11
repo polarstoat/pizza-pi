@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import Form from 'react-bootstrap/Form'
-import Col from 'react-bootstrap/Col'
-import InputGroup from 'react-bootstrap/InputGroup'
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+import InputGroup from 'react-bootstrap/InputGroup';
 
-import NumberInput from './NumberInput.js'
+import NumberInput from './NumberInput.js';
 
 class Pizza extends Component {
   constructor(props) {

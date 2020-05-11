@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Container from 'react-bootstrap/Container'
+import Container from 'react-bootstrap/Container';
 
-import Pizza from './Pizza.js'
+import Pizza from './Pizza.js';
 
 function App() {
   return (
