@@ -66,7 +66,7 @@ class Pizza extends Component {
           <Form.Group as={Col} controlId={`${lowerCaseName}-pizza-area`}>
             <Form.Label>Area</Form.Label>
             <InputGroup>
-              <Form.Control type="number" readOnly={true} value={area.toFixed(2)} />
+              <Form.Control type="text" readOnly={true} value={this.state.diameter && area.toFixed(2)} />
               <InputGroup.Append>
                 <InputGroup.Text>sq. in</InputGroup.Text>
               </InputGroup.Append>
@@ -78,7 +78,7 @@ class Pizza extends Component {
               <InputGroup.Prepend>
                 <InputGroup.Text>£</InputGroup.Text>
               </InputGroup.Prepend>
-              <Form.Control type="number" readOnly={true} value={(this.state.price / area).toFixed(4)} />
+              <Form.Control type="text" readOnly={true} value={this.state.diameter && this.state.price && (this.state.price / area).toFixed(4)} />
             </InputGroup>
           </Form.Group>
         </Form.Row>
