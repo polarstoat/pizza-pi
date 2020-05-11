@@ -11,8 +11,8 @@ class Pizza extends Component {
     super(props);
 
     this.state = {
-      diameter: 13,
-      price: 10.99,
+      diameter: undefined,
+      price: undefined,
     };
 
     this.handleDiameterChange = this.handleDiameterChange.bind(this);
